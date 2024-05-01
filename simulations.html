@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simulations of Equations</title>
+    <style>
+        body {
+            background: url('earth.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Ensure the background image covers the entire page */
+            display: flex;
+            flex-direction: column; /* Default vertical layout */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        
+        h1 {
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #7F00FF; /* Colored shadow */
+        }
+        
+        /* Default button styles */
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7F00FF; /* Purple */
+            color: white; /* White text */
+            text-align: center;
+            text-decoration: none; /* No underlines */
+            border-radius: 10px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition */
+            margin: 10px; /* Space between buttons */
+        }
+        
+        /* Hover effect for default buttons */
+        .nav-button:hover {
+            background-color: #390178; /* Green on hover */
+        }
+        
+        /* Flexbox container for red buttons */
+        .red-buttons-container {
+            display: flex; /* Horizontal layout */
+            flex-direction: row; /* Align buttons in a row */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            gap: 20px; /* Space between buttons */
+            margin: 20px; /* Additional margin */
+        }
+        
+        /* Style for red buttons with no rounded corners */
+        .red-button {
+            padding: 15px 30px; /* Increase padding for larger buttons */
+            background-color:#38a5c9; /* Red background */
+            color: white; /* White text */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underlines */
+            border-radius: 10px; /* No rounded corners */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        
+        /* Hover effect for red buttons */
+        .red-button:hover {
+            background-color: #2a7791; /* Dark red on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>This Is My Portfolio</h1>
+    </header>
+
+    <!-- Navigation buttons with links -->
+    <div>
+        <a href="mindmap.html" class="nav-button">Mind Map</a>
+        <a href="services.html" class="nav-button">Case Study</a>
+        <a href="about.html" class="nav-button">Home</a>
+    </div>
+
+    <footer>
+        <p>© 2024 By SEAN KENYON SAN JOSE.</p>
+    </footer>
+    
+    <!-- Red buttons side by side in the center of the screen -->
+    <div class="red-buttons-container">
+        <a href="https://www.desmos.com/calculator/aq4nxoedtp" class="red-button">Taylor Series Theorem</a>
+        <a href="https://www.desmos.com/calculator/gkg0qwcowy" class="red-button">Maclaurin Theorem</a>
+		<a href="https://www.desmos.com/calculator/exwczxdg1a" class="red-button">Newton's Method of Root Finding</a>
+		<a href="absolute.html" class="red-button">Absolute Error</a>
+		<a href="relative error.html" class="red-button">Percentage Error</a>
+				</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var aboutButton = document.querySelector('.nav-button'); 
+            aboutButton.addEventListener('click', function() {
+                window.location.href = 'about.html'; // Redirects to 'about.html'
+            });
+        });
+    </script>
+</body>
+</html>

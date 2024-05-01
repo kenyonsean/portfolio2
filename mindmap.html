@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mind Map</title>
+    <style>
+        body {
+            background: url('earth.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Ensure the background image covers the entire page */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        
+        h1 {
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #7F00FF;
+        }
+        
+        /* Button styles */
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7F00FF;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        
+        /* Hover effect */
+        .nav-button:hover {
+            background-color: #390178;
+        }
+        
+        /* Style for centered image */
+        .centered-image {
+            margin-top: 20px; /* Add space between the footer and image */
+            display: inline-block; /* Center the image */
+            text-align: center; /* Align text */
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>This Is My Portfolio</h1>
+    </header>
+
+    <!-- Navigation buttons with links -->
+    <div>
+        <a href="about.html" class="nav-button">Home</a>
+        <a href="services.html" class="nav-button">Case Study</a>
+        <a href="simulations.html" class="nav-button">Simulations</a>
+    </div>
+
+   <!-- Inserted image -->
+    <div class="centered-image">
+        <img src="mindmap.png" width="1050" height="550"> <!-- Ensure correct file name and extension -->
+    </div>
+
+    <footer>
+        <p>© 2024 By SEAN KENYON SAN JOSE.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var aboutButton = document.querySelector('.nav-button'); 
+            aboutButton.addEventListener('click', function() {
+                window.location.href = 'about.html'; // Redirects to 'about.html'
+            });
+        });
+    </script>
+</body>
+</html>

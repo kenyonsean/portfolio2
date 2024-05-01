@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Absolute Error Calculator</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            padding: 20px;
+            background: url('earth.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Ensure the background image covers the entire page */
+            display: flex;
+            flex-direction: column; /* Default vertical layout */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 10px #000; /* Default shadow for other texts */
+        }
+
+        h1 {
+            color: white; /* Highlighting color */
+            font-size: 3em; /* Larger font size */
+            text-shadow: 0 0 20px #FFF, 0 0 30px #FFF; /* Enhanced text-shadow for emphasis */
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-shadow: 0 0 10px #FFF; /* Light text-shadow for other text */
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between; /* Spread elements evenly */
+            width: 100%; /* Fill available space */
+            max-width: 600px; /* Set a maximum width to control layout */
+        }
+
+        .input-container label,
+        .input-container input {
+            padding: 10px;
+        }
+
+        .input-container div {
+            margin-right: 20px; /* Adjust horizontal spacing */
+        }
+
+        form {
+            margin-top: 30px; /* Creates space above the form, making button lower */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Increase the space between inputs and button */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px; /* Maintain consistent spacing */
+            font-weight: normal;
+            color: black; /* Set text color to black */
+            background-color: white; /* Set background color to white */
+            padding: 10px; /* Add padding for visual spacing */
+            border-radius: 5px; /* Slight rounding for aesthetics */
+        }
+    </style>
+</head>
+<body>
+    <h1>Absolute Error Calculator</h1>
+    
+    <p>Enter the measured value and the true value to compute the absolute error.</p>
+
+    <form id="error-form" onsubmit="computeAbsoluteError(); return false;">
+        <div class="input-container">
+            <div>
+                <label for="measured">Measured Value:</label>
+                <input type="number" id="measured" required>
+            </div>
+            <div>
+                <label for="true">True Value:</label>
+                <input type="number" id="true" required>
+            </div>
+        </div>
+        
+        <button type="submit">Calculate Absolute Error</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function computeAbsoluteError() {
+            // Get the measured value and the true value from the inputs
+            var measured = parseFloat(document.getElementById("measured").value);
+            var trueValue = parseFloat(document.getElementById("true").value);
+
+            // Calculate the absolute error
+            var absoluteError = Math.abs(measured - trueValue);
+
+            // Display the result
+            document.getElementById("result").innerText = "Absolute Error: " + absoluteError;
+        }
+    </script>
+</body>
+</html>

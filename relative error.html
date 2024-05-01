@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Percentage Error Calculator</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            padding: 20px;
+            background: url('earth.jpg') no-repeat center center fixed; /* Background image */
+            background-size: cover; /* Ensure the background image covers the entire page */
+            display: flex;
+            flex-direction: column; /* Default vertical layout */
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 10px #000; /* Default shadow for other texts */
+        }
+
+        h1 {
+            color: white;
+            font-size: 3em;
+            text-shadow: 0 0 20px #FFF, 0 0 30px #FFF; /* Enhanced text-shadow */
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-shadow: 0 0 10px #FFF;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .input-container label,
+        .input-container input {
+            padding: 10px;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Percentage Error Calculator</h1>
+    
+    <p>Enter the measured value and the true value to compute the percentage error.</p>
+
+    <form id="error-form" onsubmit="computeRelativeError(); return false;">
+        <div class="input-container">
+            <div>
+                <label for="measured">Measured Value:</label>
+                <input type="number" id="measured" required>
+            </div>
+            <div>
+                <label for="true">True Value:</label>
+                <input type="number" id="true" required>
+            </div>
+        </div>
+        
+        <button type="submit">Calculate Relative Error</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function computeRelativeError() {
+            // Get the measured value and the true value from the inputs
+            var measured = parseFloat(document.getElementById("measured").value);
+            var trueValue = parseFloat(document.getElementById("true").value);
+
+            // Check if trueValue is zero to avoid division by zero
+            if (trueValue === 0) {
+                document.getElementById("result").innerText = "Error: True Value cannot be zero.";
+                return;
+            }
+
+            // Calculate the absolute error
+            var absoluteError = Math.abs(measured - trueValue);
+
+            // Calculate the relative error as a percentage
+            var relativeError = (absoluteError / trueValue) * 100;
+
+            // Display the result
+            document.getElementById("result").innerText = `Relative Error: ${relativeError.toFixed(2)}%`;
+        }
+    </script>
+</body>
+</html>

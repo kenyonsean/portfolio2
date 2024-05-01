@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        /* Make the video cover the entire page */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* vh stands for viewport height */
+            object-fit: cover;
+            z-index: -1; /* Ensure the video is behind other content */
+        }
+
+        /* Align content without causing scroll */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute content with space between */
+            align-items: center; /* Centers content horizontally */
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        h1 {
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #7F00FF;
+            z-index: 1; /* Ensures header is above the video */
+			margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 18px; /* Smaller font size */
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #7F00FF; /* Same style as h1 */
+            z-index: 1; /* Ensures text is above the video */
+			color: white
+        }
+
+        footer {
+            position: absolute; /* Position at the bottom */
+            bottom: 10px; /* Adjust this value to move the footer upward */
+            width: 100%; /* Takes full width */
+            text-align: center;
+            z-index: 1; /* Keeps it above the background video */
+        }
+
+        .nav-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background video -->
+    <video id="bg-video" autoplay loop muted>
+        <source src="blackhole earth.mp4" type="video/mp4">
+    </video>
+    
+    <header>
+        <h1 id="portfolio-title">Numerical Method Portfolio</h1>
+        <h2>Click anywhere to continue</h2> <!-- Smaller font, same style as h1 -->
+    </header>
+    
+    <footer>
+        <p>© 2024 By SEAN KENYON SAN JOSE</p>
+    </footer>
+    
+    <script>
+        // Redirect to another page on body click
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.addEventListener('click', function() {
+                window.location.href = 'about.html'; // Redirect on click
+            });
+        });
+    </script>
+</body>
+</html>
